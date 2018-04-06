@@ -26,7 +26,6 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: rgba(168, 211, 248, 0.25);
 }
@@ -35,38 +34,55 @@ li a:hover {
     float: right;
 }
 
-#title {
-    float: inside;
-}
-
 #home {
     float: left;
 }
 
 div.block {
-    width: 100vh;
-    background-color: white;
+    width: 49%;
+    height: 80%;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+}
+
+div.horizontal-block {
+    width: 94%;
+    height: 28%;
+    alignment: center;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+    margin: 1% 2%;
+}
+
+div.left-cube {
+    width: 45%;
+    height: 43%;
+    float: left;
+    alignment: center;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+    margin: 1% 2%;
+}
+
+div.right-cube {
+    width: 45%;
+    height: 43%;
+    float: right;
+    alignment: center;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+    margin: 1% 2%;
 }
 
 #container {
     width: 100%;
-    margin: 10px auto auto;
+    margin: 2% auto auto;
 }
 #first {
-    width: 49%;
     float: left;
-    height: 80%;
-    background-color: rgba(168, 211, 248, 0.25);
-    border:2px solid black;
-
 }
 #second {
-    width: 49%;
     float: right;
-    height: 80%;
-    background-color: rgba(168, 211, 248, 0.25);
-    border:2px solid black;
-
 }
 #clear {
     clear: both;
