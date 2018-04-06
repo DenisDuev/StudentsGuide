@@ -1,7 +1,6 @@
-div {
+div.header {
     text-align: center;
-
-    background-color: #333;
+    background-color: #2c62b5;
 }
 
 ul {
@@ -9,7 +8,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #2c62b5;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
@@ -29,7 +28,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: rgba(168, 211, 248, 0.25);
 }
 
 #user {
@@ -42,4 +41,39 @@ li a:hover {
 
 #home {
     float: left;
+}
+
+div.block {
+    width: 100vh;
+    background-color: white;
+}
+
+#container {
+    width: 100%;
+    margin: 10px auto auto;
+}
+#first {
+    width: 49%;
+    float: left;
+    height: 80%;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+
+}
+#second {
+    width: 49%;
+    float: right;
+    height: 80%;
+    background-color: rgba(168, 211, 248, 0.25);
+    border:2px solid black;
+
+}
+#clear {
+    clear: both;
+}
+
+span {
+    color: white;
+    font-size: xx-large;
+    font-family: "Bookman Old Style";
 }
