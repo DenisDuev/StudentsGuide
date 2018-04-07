@@ -137,6 +137,13 @@ img.in-square {
     margin: 5% 25%;
 }
 
+img.post{
+    float: left;
+    width: 25%;
+    height: 50%;
+    margin: 1%;
+}
+
 input {
     width: 80%;
     padding: 3% 5%;
