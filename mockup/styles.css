@@ -42,7 +42,7 @@ div.block {
     overflow: auto;
     text-align:center;
     width: 49%;
-    height: 80%;
+    height: 95%;
     background-color: rgba(168, 211, 248, 0.25);
     border:2px solid black;
 }
@@ -84,7 +84,7 @@ div.right-cube {
 
 div.forth-cube {
     width: 22%;
-    height: 23%;
+    height: 50%;
     margin: 10% 1%;
 }
 
@@ -167,6 +167,12 @@ input[type=submit]{
     color: white;
 }
 
+input[type=button]{
+    font-size: large;
+    background-color: #2c62b5;
+    color: white;
+}
+
 P {
     margin: 1%;
 }
@@ -174,4 +180,9 @@ P {
 textarea {
     width: 100%;
     height: 50%;
+}
+
+a {
+    text-decoration:none;
+    color: inherit;
 }
