@@ -40,6 +40,7 @@ li a:hover {
 
 div.block {
     overflow: hidden;
+    text-align:center;
     width: 49%;
     height: 80%;
     background-color: rgba(168, 211, 248, 0.25);
@@ -48,8 +49,6 @@ div.block {
 
 div.horizontal-block {
     overflow: auto;
-    width: 94%;
-    height: 28%;
     alignment: center;
     background-color: rgba(168, 211, 248, 0.25);
     border:2px solid black;
@@ -80,6 +79,14 @@ div.right-cube {
     margin: 1% 2%;
 }
 
+div.center {
+    overflow: hidden;
+    text-align:center;
+    width: 49%;
+    height: 50%;
+    margin: 25% 25%;
+}
+
 #container {
     width: 100%;
     margin: 2% auto auto;
@@ -89,9 +96,6 @@ div.right-cube {
 }
 #second {
     float: right;
-}
-#clear {
-    clear: both;
 }
 
 span {
@@ -111,4 +115,12 @@ img.in-square {
     width: 50%;
     height: 60%;
     margin: 5% 25%;
+}
+
+input {
+    width: 80%;
+    padding: 3% 5%;
+    margin: 1% 0;
+    box-sizing: border-box;
+    border-radius: 4%;
 }
