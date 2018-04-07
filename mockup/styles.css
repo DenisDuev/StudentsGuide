@@ -50,6 +50,8 @@ div.block {
 div.horizontal-block {
     overflow: auto;
     alignment: center;
+    width: 94%;
+    height: 28%;
     background-color: rgba(168, 211, 248, 0.25);
     border:2px solid black;
     margin: 1% 2%;
@@ -77,6 +79,12 @@ div.right-cube {
     background-color: rgba(168, 211, 248, 0.25);
     border:2px solid black;
     margin: 1% 2%;
+}
+
+div.forth-cube {
+    width: 22%;
+    height: 23%;
+    margin: 10% 1%;
 }
 
 div.center {
@@ -122,5 +130,5 @@ input {
     padding: 3% 5%;
     margin: 1% 0;
     box-sizing: border-box;
-    border-radius: 4%;
+    border-radius: 10px;
 }
