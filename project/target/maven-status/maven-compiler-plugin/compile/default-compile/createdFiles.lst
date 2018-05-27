@@ -1,1 +1,4 @@
+com\ux\student\guide\main\UserRepository.class
+com\ux\student\guide\main\UserController.class
 com\ux\student\guide\main\Application.class
+com\ux\student\guide\main\User.class
