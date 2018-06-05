@@ -111,3 +111,35 @@ function createUniversityTile(sId, sImage, sName) {
 
     return aTag;
 }
+
+function getParamsFromUrl(sParam) {
+    var url = new URL(window.location.href);
+    var param = url.searchParams.get(sParam);
+    return param;
+}
+
+function loadDataInNewsPage(){
+    var id = getParamsFromUrl("id");
+
+    var title = document.createElement("h3");
+    title.innerText = news[id].title;
+    var p = document.createElement("p");
+    p.innerText = news[id].content;
+    var divText = document.createElement("div");
+    divText.className = "text-cube";
+    divText.appendChild(title);
+    divText.appendChild(p);
+
+
+    var img = document.createElement("img");
+    img.src = "images/" + news[id].image;
+    img.className = "in-square";
+    var divCube = document.createElement("div");
+    divCube.className = "left-cube";
+    divCube.style = "border: none; height: 80%";
+    divCube.appendChild(img);
+
+    var contentDiv = document.getElementById("content");
+    contentDiv.appendChild(divCube);
+    contentDiv.appendChild(divText);
+}
