@@ -153,6 +153,11 @@ img.post{
     margin: 1%;
 }
 
+img.university {
+    height: 50%;
+    margin: 2% 25%;
+}
+
 input {
     width: 80%;
     padding: 3% 5%;

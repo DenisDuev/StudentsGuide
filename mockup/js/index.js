@@ -29,36 +29,40 @@ var universities = [
     {
         "name": "Sofia University Kliment Ohridski",
         "description": "Sofia University St. Kliment Ohridski is the first Bulgarian high academic school establishment. Its history is an embodiment and a continuation of the centurylong cultural and educational tradition of the Bulgarian nation.In 1880 the Bulgarian Ministry of Education tabled a draft of the Main Educational Act for the Schools in the Principality of Bulgaria in the National Assembly. It envisaged that “after completing the requirements of the Real and Classical schools to open a Bulgarian high school (a University) that will teach the sciences of law, the arts, the sciences, the medical sciences, and the technological sciences.” In 1887, T. Ivanchev, minister of education, issued an Ordinance for the Opening of a Pedagogy Class Affiliated to the First Male Gymnasium in Sofia. The classes began on 1st. Oct., 1888. On 8th, Dec., 1888 the National Assembly passed an act transforming the latter into a High School; the act was ",
-        "image": "news1.gif"
+        "image": "news1.gif",
+        "site": "https://www.fmi.uni-sofia.bg"
     },
     {
         "name": "Sofia University Kliment Ohridski",
         "description": "Sofia University St. Kliment Ohridski is the first Bulgarian high academic school establishment. Its history is an embodiment and a continuation of the centurylong cultural and educational tradition of the Bulgarian nation.In 1880 the Bulgarian Ministry of Education tabled a draft of the Main Educational Act for the Schools in the Principality of Bulgaria in the National Assembly. It envisaged that “after completing the requirements of the Real and Classical schools to open a Bulgarian high school (a University) that will teach the sciences of law, the arts, the sciences, the medical sciences, and the technological sciences.” In 1887, T. Ivanchev, minister of education, issued an Ordinance for the Opening of a Pedagogy Class Affiliated to the First Male Gymnasium in Sofia. The classes began on 1st. Oct., 1888. On 8th, Dec., 1888 the National Assembly passed an act transforming the latter into a High School; the act was ",
-        "image": "news1.gif"
+        "image": "news1.gif",
+        "site": "https://www.fmi.uni-sofia.bg"
     },
     {
         "name": "Sofia University Kliment Ohridski",
         "description": "Sofia University St. Kliment Ohridski is the first Bulgarian high academic school establishment. Its history is an embodiment and a continuation of the centurylong cultural and educational tradition of the Bulgarian nation.In 1880 the Bulgarian Ministry of Education tabled a draft of the Main Educational Act for the Schools in the Principality of Bulgaria in the National Assembly. It envisaged that “after completing the requirements of the Real and Classical schools to open a Bulgarian high school (a University) that will teach the sciences of law, the arts, the sciences, the medical sciences, and the technological sciences.” In 1887, T. Ivanchev, minister of education, issued an Ordinance for the Opening of a Pedagogy Class Affiliated to the First Male Gymnasium in Sofia. The classes began on 1st. Oct., 1888. On 8th, Dec., 1888 the National Assembly passed an act transforming the latter into a High School; the act was ",
-        "image": "news1.gif"
+        "image": "news1.gif",
+        "site": "https://www.fmi.uni-sofia.bg"
     },
     {
         "name": "Sofia University Kliment Ohridski",
         "description": "Sofia University St. Kliment Ohridski is the first Bulgarian high academic school establishment. Its history is an embodiment and a continuation of the centurylong cultural and educational tradition of the Bulgarian nation.In 1880 the Bulgarian Ministry of Education tabled a draft of the Main Educational Act for the Schools in the Principality of Bulgaria in the National Assembly. It envisaged that “after completing the requirements of the Real and Classical schools to open a Bulgarian high school (a University) that will teach the sciences of law, the arts, the sciences, the medical sciences, and the technological sciences.” In 1887, T. Ivanchev, minister of education, issued an Ordinance for the Opening of a Pedagogy Class Affiliated to the First Male Gymnasium in Sofia. The classes began on 1st. Oct., 1888. On 8th, Dec., 1888 the National Assembly passed an act transforming the latter into a High School; the act was ",
-        "image": "news1.gif"
+        "image": "news1.gif",
+        "site": "https://www.fmi.uni-sofia.bg"
     },
     {
         "name": "Sofia University Kliment Ohridski",
         "description": "Sofia University St. Kliment Ohridski is the first Bulgarian high academic school establishment. Its history is an embodiment and a continuation of the centurylong cultural and educational tradition of the Bulgarian nation.In 1880 the Bulgarian Ministry of Education tabled a draft of the Main Educational Act for the Schools in the Principality of Bulgaria in the National Assembly. It envisaged that “after completing the requirements of the Real and Classical schools to open a Bulgarian high school (a University) that will teach the sciences of law, the arts, the sciences, the medical sciences, and the technological sciences.” In 1887, T. Ivanchev, minister of education, issued an Ordinance for the Opening of a Pedagogy Class Affiliated to the First Male Gymnasium in Sofia. The classes began on 1st. Oct., 1888. On 8th, Dec., 1888 the National Assembly passed an act transforming the latter into a High School; the act was ",
-        "image": "news1.gif"
+        "image": "news1.gif",
+        "site": "https://www.fmi.uni-sofia.bg"
     }
 ];
 
 function addAllNews() {
-    var index = 0;
     var newDiv = document.getElementById("first");
     for (var i = 0; i < news.length; i++) {
         var data = news[i];
-        newDiv.appendChild(createNewsTile(index, data.image, data.summary, data.title));
+        newDiv.appendChild(createNewsTile(i, data.image, data.summary, data.title));
     }
 }
 
@@ -84,11 +88,10 @@ function createNewsTile(iId, sImage, sDescription, sTitle) {
 }
 
 function addAllUniversities() {
-    var index = 0;
     var universityDiv = document.getElementById("second");
     for (var i = 0; i < universities.length; i++) {
         var data = universities[i];
-        universityDiv.appendChild(createUniversityTile(index, data.image, data.name));
+        universityDiv.appendChild(createUniversityTile(i, data.image, data.name));
     }
 }
 
@@ -120,11 +123,10 @@ function getParamsFromUrl(sParam) {
 
 function loadDataInNewsPage(){
     var id = getParamsFromUrl("id");
-
-    var title = document.createElement("h3");
-    title.innerText = news[id].title;
     var p = document.createElement("p");
     p.innerText = news[id].content;
+    var title = document.createElement("h3");
+    title.innerText = news[id].title;
     var divText = document.createElement("div");
     divText.className = "text-cube";
     divText.appendChild(title);
@@ -138,6 +140,68 @@ function loadDataInNewsPage(){
     divCube.className = "left-cube";
     divCube.style = "border: none; height: 80%";
     divCube.appendChild(img);
+
+    var contentDiv = document.getElementById("content");
+    contentDiv.appendChild(divCube);
+    contentDiv.appendChild(divText);
+}
+
+function loadDataInUniversityPage() {
+
+    //     <div class="left-cube" style="border: none; height: 100%">
+    //     <img src="images/university_logo.png" alt="university logo" class="in-square"
+    // style="height: 50%; margin: 2% 25%;">
+    //     <form action="https://www.fmi.uni-sofia.bg">
+    //     <input type="submit" value="official site" style="width: 40%; height: 15%"/>
+    //     </form>
+    //     <form action="map.html">
+    //     <input type="submit" value="show on map" style="width: 40%; height: 15%"/>
+    //     </form>
+    //     </div>
+    //     <div class="text-cube">
+    //     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit, tortor sagittis posuere
+    // convallis, arcu est imperdiet tortor, sit amet ornare mi nulla eu mi. Aliquam dignissim quam nisi, vel
+    // sagittis neque volutpat non. Sed quis tempus metus, eget pellentesque ex. Quisque venenatis ac libero in
+    // condimentum.
+    // </p>
+    //
+
+    var id = getParamsFromUrl("id");
+    var title = document.createElement("h3");
+    title.innerText = universities[id].name;
+    var p = document.createElement("p");
+    p.innerText = universities[id].description;
+    var divText = document.createElement("div");
+    divText.className = "text-cube";
+    divText.appendChild(title);
+    divText.appendChild(p);
+
+    var img = document.createElement("img");
+    img.src = "images/" + universities[id].image;
+    img.className = "in-square university";
+    var divCube = document.createElement("div");
+    divCube.className = "left-cube";
+    divCube.style = "border: none; height: 80%";
+
+    var formSite = document.createElement("form");
+    formSite.action = universities[id].site;
+    var input = document.createElement("input");
+    input.type = "submit";
+    input.value = "Official site";
+    input.style = "width: 40%; height: 15%";
+    formSite.appendChild(input);
+
+    var formMap = document.createElement("form");
+    formMap.action = "map.html";
+    var input = document.createElement("input");
+    input.type = "submit";
+    input.value = "show on map";
+    input.style = "width: 40%; height: 15%";
+    formMap.appendChild(input);
+
+    divCube.appendChild(img);
+    divCube.appendChild(formSite);
+    divCube.appendChild(formMap);
 
     var contentDiv = document.getElementById("content");
     contentDiv.appendChild(divCube);
