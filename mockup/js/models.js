@@ -87,15 +87,15 @@ function createNewsTile(iId, sImage, sDescription, sTitle) {
     return aTag;
 }
 
-function addAllUniversities() {
+function addAllUniversities(sClass) {
     var universityDiv = document.getElementById("second");
     for (var i = 0; i < universities.length; i++) {
         var data = universities[i];
-        universityDiv.appendChild(createUniversityTile(i, data.image, data.name));
+        universityDiv.appendChild(createUniversityTile(i, data.image, data.name, sClass));
     }
 }
 
-function createUniversityTile(sId, sImage, sName) {
+function createUniversityTile(sId, sImage, sName, sClass) {
     var name = document.createElement("span");
     name.style = "color: black";
     name.innerText = sName;
@@ -104,7 +104,7 @@ function createUniversityTile(sId, sImage, sName) {
     imageU.className = "in-square";
 
     var div = document.createElement("div");
-    div.className = "right-cube";
+    div.className = sClass;
     div.appendChild(imageU);
     div.appendChild(name);
 
