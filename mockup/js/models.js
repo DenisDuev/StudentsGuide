@@ -58,15 +58,15 @@ var universities = [
     }
 ];
 
-function addAllNews() {
+function addAllNews(sClass) {
     var newDiv = document.getElementById("first");
     for (var i = 0; i < news.length; i++) {
         var data = news[i];
-        newDiv.appendChild(createNewsTile(i, data.image, data.summary, data.title));
+        newDiv.appendChild(createNewsTile(i, data.image, data.summary, data.title, sClass));
     }
 }
 
-function createNewsTile(iId, sImage, sDescription, sTitle) {
+function createNewsTile(iId, sImage, sDescription, sTitle, sClass) {
     var p = document.createElement("p");
     p.innerText = sDescription;
     var image = document.createElement("img");
@@ -75,7 +75,7 @@ function createNewsTile(iId, sImage, sDescription, sTitle) {
     var title = document.createElement("h3");
     title.innerText = sTitle;
     var div = document.createElement("div");
-    div.className = "horizontal-block";
+    div.className = sClass;
 
     div.appendChild(image);
     div.appendChild(title);
@@ -109,7 +109,7 @@ function createUniversityTile(sId, sImage, sName, sClass) {
     div.appendChild(name);
 
     var aTag = document.createElement("a");
-    aTag.href="university.html?id=" + sId;
+    aTag.href = "university.html?id=" + sId;
     aTag.appendChild(div);
 
     return aTag;
@@ -121,7 +121,7 @@ function getParamsFromUrl(sParam) {
     return param;
 }
 
-function loadDataInNewsPage(){
+function loadDataInNewsPage() {
     var id = getParamsFromUrl("id");
     var p = document.createElement("p");
     p.innerText = news[id].content;
