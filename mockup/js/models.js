@@ -207,3 +207,16 @@ function loadDataInUniversityPage() {
     contentDiv.appendChild(divCube);
     contentDiv.appendChild(divText);
 }
+
+function generateEditUniversity() {
+    var id = getParamsFromUrl("id");
+
+    var img = document.getElementById("imageContainer");
+    img.src = "../images/" + universities[id].image;
+
+    var siteForm = document.getElementById("siteForm");
+    siteForm.action = universities[id].site;
+
+    var p = document.getElementById("content");
+    p.innerText = universities[id].description;
+}
