@@ -174,3 +174,25 @@ function genarateMatrixOfPost(){
         }
     }
 }
+
+function generateCommentOfPost() {
+    var groupId = getParamsFromUrl("id");
+    var postId = getParamsFromUrl("post");
+
+    var oPost = groups[groupId].posts[postId];
+
+    var headerSpan = document.createElement("span");
+    headerSpan.innerText = oPost.title;
+    var headDiv = document.createElement("div");
+    headDiv.className = "header";
+    headDiv.appendChild(headerSpan);
+    document.getElementById("first").appendChild(headDiv);
+
+    var div = document.getElementById('first');
+    var text = document.createElement("span");
+    text.innerText = oPost.content;
+    text.setAttribute("class","black");
+    div.appendChild(text);
+    div.appendChild(document.createElement("br"));
+    div.appendChild(document.createElement("br"));
+}
