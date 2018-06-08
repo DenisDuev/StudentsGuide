@@ -220,3 +220,16 @@ function generateEditUniversity() {
     var p = document.getElementById("content");
     p.innerText = universities[id].description;
 }
+
+function generateEditNews() {
+    var id = getParamsFromUrl("id");
+
+    var img = document.getElementById("imageContainer");
+    img.src = "../images/" + news[id].image;
+
+    var title = document.getElementById("title");
+    title.innerText = news[id].title;
+
+    var p = document.getElementById("content");
+    p.innerText = news[id].content;
+}
