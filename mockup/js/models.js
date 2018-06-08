@@ -58,19 +58,19 @@ var universities = [
     }
 ];
 
-function addAllNews(sClass) {
+function addAllNews(sClass, prefix, suffix) {
     var newDiv = document.getElementById("first");
     for (var i = 0; i < news.length; i++) {
         var data = news[i];
-        newDiv.appendChild(createNewsTile(i, data.image, data.summary, data.title, sClass));
+        newDiv.appendChild(createNewsTile(i, data.image, data.summary, data.title, sClass, prefix, suffix));
     }
 }
 
-function createNewsTile(iId, sImage, sDescription, sTitle, sClass) {
+function createNewsTile(iId, sImage, sDescription, sTitle, sClass, prefix, suffix) {
     var p = document.createElement("p");
     p.innerText = sDescription;
     var image = document.createElement("img");
-    image.src = "images/" + sImage;
+    image.src = prefix +"images/" + sImage;
     image.className = "in-tile";
     var title = document.createElement("h3");
     title.innerText = sTitle;
@@ -82,7 +82,7 @@ function createNewsTile(iId, sImage, sDescription, sTitle, sClass) {
     div.appendChild(p);
 
     var aTag = document.createElement("a");
-    aTag.href = "news.html?id=" + iId;
+    aTag.href = "news" + suffix + ".html?id=" + iId;
     aTag.appendChild(div);
     return aTag;
 }
