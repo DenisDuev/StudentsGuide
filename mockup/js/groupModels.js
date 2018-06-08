@@ -88,26 +88,38 @@ var groups = [
     }
 ];
 
-function generateGroups() {
+function generateGroups(bHasLink) {
     var contentDiv = document.getElementById("content");
 
     function createGroup(iId) {
-        var input = document.createElement("input");
-        input.type = "submit";
-        input.value = "JOIN";
-
-        var form = document.createElement("a");
-        form.href = "group.html?id=" + iId;
-        form.appendChild(input);
+        var div = document.createElement("div");
+        div.className = "horizontal-block";
+        div.id = "div" + iId;
 
         var span = document.createElement("span");
         span.style = "color: black";
         span.innerText = groups[iId].name;
 
-        var div = document.createElement("div");
-        div.className = "horizontal-block";
         div.appendChild(span);
-        div.appendChild(form);
+
+        var input = document.createElement("input");
+        input.type = "submit";
+        input.value = "JOIN";
+
+        if (bHasLink === true)  {
+            var form = document.createElement("a");
+            form.href = "group.html?id=" + iId;
+            form.appendChild(input);
+            div.appendChild(form);
+        } else {
+            div.appendChild(input);
+
+            input.onclick = function (e) {
+                if (confirm("Are you sure you want to delete this group")) {
+                    document.getElementById("div" + iId).remove();
+                }
+            }.bind(iId)
+        }
 
         return div;
     }
